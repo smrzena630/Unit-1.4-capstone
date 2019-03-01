@@ -12,6 +12,26 @@ img = plt.imread('cancer.jpg')
 fig, axes = plt.subplots(1, 1)
 axes.imshow(img, interpolation='none')
 
+
+directory = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(directory, 'canceruk2.jpg')
+img = plt.imread('canceruk2.jpg')
+
+fig, axes = plt.subplots(1, 1)
+axes.imshow(image, interpolation='none')
+fig.show()
+
+image = Image.open('canceruk2.jpg')
+greyscale_image = image.convert('L')
+greyscale_image.save('greyscale_image2.jpg')
+
+image = Image.open('canceruk.jpg')
+logo = Image.open('canceruk2.jpg')
+image_copy = image.copy()
+image_copy.paste(logo, (9, 8))
+image_copy.save('pasted_image.jpg')
+
+
 height = len(img)
 width = len(img[0])
 for r in range(height):
